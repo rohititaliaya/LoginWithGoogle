@@ -1,0 +1,121 @@
+{% load socialaccount %}
+{% providers_media_js %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Feature Post</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<style>
+body {font-family: Arial, Helvetica, sans-serif; padding: 100px;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+ 
+  
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+	
+	<a href="{% url 'google' %}">User home</a> |<a href="{% url 'upload' %}"> Profile Picture</a> | <a href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
+
+	<h1>Add Feature Post</h1>
+
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<table class="table">
+		
+		<tr>
+			<td>ID</td>
+			<td>
+			
+				<input id="uid" type="text" name="uid" value="{{user.socialaccount_set.all.0.uid}}"> 
+				
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				Title
+			</td>
+			<td>
+				{{form.title}}
+			</td>
+		</tr>
+		<tr>
+			<td>Choose Profile Photo</td>
+			<td>
+				{{ form.user_Img}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Created Date:
+			</td>
+			<td>
+				{{form.created}}
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<button type="submit">Post</button>
+			</td> 
+		</tr>
+	</table>	
+	</form>
+</body>
+</html>
