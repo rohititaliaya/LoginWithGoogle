@@ -26,7 +26,7 @@ SECRET_KEY = 'pp(8u1-7f5r-ig=mchw%vpkh_41lv!o^6*py&5$k8@k$h66uc4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','']
+ALLOWED_HOSTS = ['127.0.0.1','loginbygoogle.herokuapp.com']
 
 
 # Application definition
