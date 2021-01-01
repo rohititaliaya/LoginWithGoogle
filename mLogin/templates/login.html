@@ -80,25 +80,6 @@ span.psw {
 <div>
 <h1>Login with Google<a href="{% provider_login_url 'google' %}"> click here</a></h1>
 </div>
-<center>OR</center>
-
-<form action="" method="post">
-  <div class="container">
-	{% csrf_token %}
-	<!-- <label for="uname"><b>Username</b></label> -->
-	{{user.as_p}}
-	<br>
-<!-- 	<label for="uname"><b>Password</b></label> -->
-
-    
-    <button type="submit">Login</button>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <span class="cancelbtn">New user?<a href="{% url 'Register' %}">sign up here</a></span>
-   
-  </div>
-</form>
 
 </body>
 </html>

@@ -75,7 +75,7 @@ span.psw {
 		 <p style="color: green;"> {{messages}}</p>
 		{% endfor %}
 		</div>
-		<a href="{% url 'google' %}">User home</a> |<a href="{% url 'upload' %}"> Profile Picture</a> | <a href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
+		<a href="{% url 'google' %}">User home</a> | <a href="{% url 'upload' %}/{{user.socialaccount_set.all.0.uid}}">Upload Profile Picture</a> | <a href="{% url 'feature' %}/{{user.socialaccount_set.all.0.uid}}"> Add Feature Post</a> | <a href="{% url 'seepost' %}/{{user.socialaccount_set.all.0.uid}}"> Feature Post</a> | <a href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
 	<h2>User Home</h2>
 	<form method = "post" enctype="multipart/form-data"> 
         {% csrf_token %} 

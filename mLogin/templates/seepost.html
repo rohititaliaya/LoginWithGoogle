@@ -1,3 +1,5 @@
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,7 +71,7 @@ span.psw {
 </head>
 <body>
 	
-	<a href="{% url 'google' %}">User home</a> |<a href="{% url 'upload' %}"> Profile Picture</a> | <a href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
+	<a href="{% url 'google' %}">User home</a> | <a href="{% url 'upload' %}/{{user.socialaccount_set.all.0.uid}}">Upload Profile Picture</a> | <a href="{% url 'feature' %}/{{user.socialaccount_set.all.0.uid}}"> Add Feature Post</a> | <a href="{% url 'seepost' %}/{{user.socialaccount_set.all.0.uid}}"> Feature Post</a> | <a href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
 
 	<h1>All Feature Post</h1>
   {% for x in usx %}
